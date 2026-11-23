@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vyro-script-intake"
+version = "1.0.0"
+description = "Validated intake contracts and CLI for VYRO MEDIA short-form content briefs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [{ name = "VYRO MEDIA" }]
+dependencies = ["pydantic>=2.7,<3", "typer>=0.12,<1", "rich>=13.7,<15"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.5,<1", "mypy>=1.10,<2"]
+
+[project.scripts]
+vyro-intake = "vyro_script_intake.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

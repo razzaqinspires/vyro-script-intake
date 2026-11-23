@@ -47,3 +47,6 @@ pytest
 ## Security and ownership
 
 Do not put passwords, API keys, private customer details, or unreleased campaign information into public examples. This repository is proprietary; see `LICENSE`.
+
+## 1.1.0 — Prime API
+Optional FastAPI service for website intake: `POST /v1/briefs/validate` and `POST /v1/briefs/normalize`. Install `pip install -e '.[api]'`, set `VYRO_SERVICE_API_KEY`, then run `uvicorn vyro_script_intake.api:app --host 0.0.0.0 --port 8000`. Requests require `Authorization: Bearer <service-key>`. This service validates and normalizes only; it does not generate scripts or publish.

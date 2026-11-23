@@ -1,3 +1,2 @@
-"""VYRO MEDIA vyro-script-intake component."""
-
-__version__ = "1.1.0"
+"""VYRO MEDIA Script Intake — validated content brief contracts."""
+__version__ = "1.2.0"
